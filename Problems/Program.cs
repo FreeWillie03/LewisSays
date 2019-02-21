@@ -6,20 +6,27 @@ namespace Problems
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Program p = new Program();
+            Console.WriteLine(p.Prefix(""));
+            Console.WriteLine(p.Prefix("one two three"));
         }
 
-        static string Prefix(string input)
+       
+        public string Prefix(string input)
         {
             string output = "";
-            int num = 0, words = 0;
+            int num = 0, words = 1;
+            if(input == "")
+                words--;
             foreach(char c in input){
                 num++; 
-                if(c.equals(' '))
-                word++;
+                if(c == ' ')
+                words++;
+                
             }
-            output = $"{num},{word}:{input}"
+            output = $"{num},{words}:{input}";
             return output;
         }
+        
     }
 }
